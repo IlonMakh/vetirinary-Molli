@@ -1,9 +1,9 @@
-import React from 'react';
+import { AppRoutes } from "./routes/AppRoute";
 
 function App() {
   return (
-    <div className="App">
-      hello
+    <div className="App overflow-hidden">
+      <AppRoutes />
     </div>
   );
 }
