@@ -15,6 +15,7 @@ export const AppRoutes = () => {
         <Route path="services" element={<ServicesPage />} />
         <Route path="catalog" element={<CatalogPage />} />
         <Route path="signIn" element={<SignPage />} />
+        <Route path="signUp" element={<SignPage />} />
         <Route path="appointment" element={<AppointmentPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
