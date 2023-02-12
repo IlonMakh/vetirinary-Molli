@@ -4,6 +4,7 @@ import { AppointmentPage } from "../pages/AppointmentPage";
 import { CatalogPage } from "../pages/CatalogPage";
 import { MainPage } from "../pages/MainPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
+import { MyPetsPage } from "../pages/PetsPage";
 import { ServicesPage } from "../pages/ServicesPage";
 import { SignPage } from "../pages/SignPage";
 
@@ -16,6 +17,7 @@ export const AppRoutes = () => {
         <Route path="catalog" element={<CatalogPage />} />
         <Route path="signIn" element={<SignPage />} />
         <Route path="signUp" element={<SignPage />} />
+        <Route path="pets" element={<MyPetsPage />} />
         <Route path="appointment" element={<AppointmentPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>

@@ -13,7 +13,7 @@ export const SignInForm = () => {
           placeholder="E-mail"
         />
         <input
-          className="w-[390px] h-[40px] font-title text-[20px] mb-[20px] px-[30px] rounded-full bg-theme-grey outline-none placeholder:text-[#4C4D4F]"
+          className="w-[390px] h-[40px] font-title text-[20px] mb-[30px] px-[30px] rounded-full bg-theme-grey outline-none placeholder:text-[#4C4D4F]"
           type="text"
           placeholder="Пароль"
         />
