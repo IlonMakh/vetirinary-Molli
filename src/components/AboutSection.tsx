@@ -2,6 +2,9 @@ import Dog from "../assets/icons/dog.svg";
 import Vet from "../assets/icons/vet.svg";
 import Cart from "../assets/icons/cart.svg";
 import Arrow from "../assets/icons/arrow.svg";
+import Shop from "../assets/images/shop.jpg";
+import Clinic from "../assets/images/clinic.jpg";
+import { NavLink } from "react-router-dom";
 
 interface aboutCard {
   title: string;
@@ -37,21 +40,38 @@ export const AboutSection = () => {
           {aboutCards.map((card) => {
             return (
               <div
-                className={
-                  card.title === "Клиника"
-                    ? "overflow-hidden relative flex flex-col justify-between w-[320px] h-[290px] rounded-lg bg-theme-blue p-[40px] after:w-[350px] after:h-[350px] after:rounded-full after:bg-white/[.2] after:absolute after:top-[-170px] after:left-[-20px]"
-                    : "overflow-hidden relative flex flex-col justify-between w-[320px] h-[290px] rounded-lg bg-theme-yellow p-[40px] after:w-[350px] after:h-[350px] after:rounded-full after:bg-white/[.4] after:absolute after:top-[-170px] after:left-[-20px]"
-                }
                 key={card.title}
+                className="w-[320px] h-[290px]  bg-transparent cursor-pointer group perspective"
               >
-                <div className="flex gap-[20px] items-center z-10">
-                  <img src={card.img} />
-                  <h5 className="font-title text-2xl">{card.title}</h5>
-                </div>
-                <div className="flex gap-[15px] items-center">
-                  <img src={Arrow} />
-                  <div className="font-text uppercase text-xl">
-                    Узнать больше
+                <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
+                  <div className="absolute backface-hidden w-full h-full">
+                    <img
+                      className="w-full h-full"
+                      src={card.title === "Клиника" ? Clinic : Shop}
+                      alt={card.title === "Клиника" ? "clinic" : "shop"}
+                    />
+                  </div>
+
+                  <div
+                    className={
+                      card.title === "Клиника"
+                        ? "absolute my-rotate-y-180 backface-hidden w-full h-full overflow-hidden flex flex-col justify-between bg-theme-blue p-[40px] after:w-[350px] after:h-[350px] after:rounded-full after:bg-white/[.2] after:absolute after:top-[-170px] after:left-[-20px] cursor-pointer"
+                        : "absolute my-rotate-y-180 backface-hidden w-full h-full overflow-hidden flex flex-col justify-between bg-theme-yellow p-[40px] after:w-[350px] after:h-[350px] after:rounded-full after:bg-white/[.4] after:absolute after:top-[-170px] after:left-[-20px] cursor-pointer"
+                    }
+                  >
+                    <div className="flex gap-[20px] items-center z-10">
+                      <img src={card.img} />
+                      <h5 className="font-title text-2xl">{card.title}</h5>
+                    </div>
+                    <NavLink
+                      to={card.title === "Клиника" ? "services" : "catalog"}
+                      className="flex gap-[15px] items-center hover:translate-x-10 duration-1000"
+                    >
+                      <img src={Arrow} />
+                      <div className="font-text uppercase text-xl">
+                        Узнать больше
+                      </div>
+                    </NavLink>
                   </div>
                 </div>
               </div>

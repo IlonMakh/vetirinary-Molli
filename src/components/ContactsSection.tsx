@@ -73,9 +73,18 @@ export const ContactsSection = () => {
                         <h5 className="font-title text-2xl text-theme-blue">
                           {contact.type}
                         </h5>
-                        <p className="font-text text-[16px] whitespace-pre-line">
+                        <a
+                          href={
+                            contact.type === "Телефон"
+                              ? "tel: +7(812) 456-25-07"
+                              : contact.type === "E-mail"
+                              ? "mailto:molli41@yandex.ru"
+                              : "https://yandex.by/maps/2/saint-petersburg/?from=mapframe&ll=30.213135%2C59.942166&mode=usermaps&source=mapframe&um=constructor%3A62e9dc4a4e709b9e80759dc54f4062d5403d91f1a3609fc017a20541263cd628&utm_source=mapframe&z=15"
+                          }
+                          className="font-text text-[16px] whitespace-pre-line"
+                        >
                           {contact.value}
-                        </p>
+                        </a>
                       </div>
                     </div>
                   );
@@ -87,14 +96,18 @@ export const ContactsSection = () => {
                 return (
                   <div className="flex gap-[20px]" key={transport.type}>
                     <img src={transport.ico} />
-                    <div className="flex items-center gap-[5px]">
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://2gis.ru/spb/directions/tab/bus/points/%7C30.211552%2C59.941921%3B5348660212664017?m=30.205644%2C59.9411%2F17.24"
+                    >
                       <span className="font-title text-2xl text-theme-blue">
                         {transport.type}
                       </span>
                       <span className="font-text text-[16px]">
                         - {transport.numbers}
                       </span>
-                    </div>
+                    </a>
                   </div>
                 );
               })}

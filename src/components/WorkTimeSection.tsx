@@ -16,11 +16,13 @@ export const WorkTimeSection = () => {
             <span className="text-theme-blue">с 9:00 до 22:00</span>, без
             перерыва на обед.
           </p>
-          <img
-            className="block cursor-pointer hover:origin-center hover:rotate-12 duration-200"
-            src={Bone}
-            alt="phone"
-          />
+          <a href="tel: +7(812) 456-25-07">
+            <img
+              className="block cursor-pointer hover:origin-center hover:rotate-12 duration-200"
+              src={Bone}
+              alt="phone"
+            />
+          </a>
         </div>
         <img
           className="absolute right-0 top-[480px]"

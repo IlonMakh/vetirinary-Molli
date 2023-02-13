@@ -54,7 +54,7 @@ export const Footer = () => {
             Ветаптека
           </NavLink>
         </ul>
-        <a href="vk.com">
+        <a href="https://vk.com" target="_blank" rel="noreferrer">
           <img src={Vk} alt="vk-ico" />
         </a>
       </div>
